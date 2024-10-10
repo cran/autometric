@@ -1,0 +1,11 @@
+library(autometric)
+library(ps)
+local({
+  path <- tempfile()
+  log_print(path = path, seconds = 1)
+  out <- log_read(path, units_memory = "bytes")
+  exp <- ps_memory_info()
+  unname(100 * (out$resident - exp["rss"]) / exp["rss"])
+  unname(100 * (out$virtual - exp["vms"]) / exp["rss"])
+  unlink(path)
+})
