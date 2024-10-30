@@ -88,20 +88,18 @@ log_read <- function(
   units_cpu <- match.arg(units_cpu)
   units_memory <- match.arg(units_memory)
   units_time <- match.arg(units_time)
-  out <- lapply(
-    X = sort(unique(unlist(lapply(path, list_files, hidden = hidden)))),
-    FUN = log_read_file,
-    units_cpu = units_cpu,
-    units_memory = units_memory,
-    units_time = units_time
+  lines <- unlist(
+    lapply(
+      X = sort(unique(unlist(lapply(path, list_files, hidden = hidden)))),
+      FUN = log_read_lines
+    )
   )
-  do.call(what = rbind, args = out)
-}
-
-log_read_file <- function(path, units_cpu, units_memory, units_time) {
-  lines <- grep(pattern = "__AUTOMETRIC__", x = readLines(path), value = TRUE)
-  lines <- gsub(".*__AUTOMETRIC__\\|(.*)\\|__AUTOMETRIC__.*", "\\1", lines)
-  out <- utils::read.table(text = lines, sep = "|", header = FALSE)
+  out <- utils::read.table(
+    text = lines,
+    sep = "|",
+    header = FALSE,
+    fill = TRUE
+  )
   colnames(out) <- c(
     "version",
     "pid",
@@ -111,8 +109,22 @@ log_read_file <- function(path, units_cpu, units_memory, units_time) {
     "core",
     "cpu",
     "resident",
+    "virtual",
+    "phase"
+  )[seq_along(out)]
+  order <- c(
+    "version",
+    "phase",
+    "pid",
+    "name",
+    "status",
+    "time",
+    "core",
+    "cpu",
+    "resident",
     "virtual"
   )
+  out <- out[, intersect(order, colnames(out))]
   out$version <- as.character(out$version)
   out$pid <- as.integer(out$pid)
   out$name <- as.character(out$name)
@@ -129,6 +141,11 @@ log_read_file <- function(path, units_cpu, units_memory, units_time) {
   }
   out$time <- as.numeric((out$time - min(out$time)) * factor_time)
   out
+}
+
+log_read_lines <- function(path, units_cpu, units_memory, units_time) {
+  lines <- grep(pattern = "__AUTOMETRIC__", x = readLines(path), value = TRUE)
+  gsub(".*__AUTOMETRIC__\\|(.*)\\|__AUTOMETRIC__.*", "\\1", lines)
 }
 
 list_files <- function(path, hidden) {

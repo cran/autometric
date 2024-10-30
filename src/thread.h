@@ -14,6 +14,9 @@
 #include "timers.h"
 #include <unistd.h>
 
+#define PHASE_DEFAULT "__DEFAULT__"
+#define PHASE_N 256
+
 typedef struct {
   char* path;
   int* pids;
@@ -33,6 +36,9 @@ pthread_args_t* pthread_args_init(
 );
 
 int pthread_run_flag_get(void);
+void pthread_phase_get(char* phase);
+void pthread_phase_reset(void);
+void pthread_phase_set(const char* phase);
 void pthread_start(pthread_args_t* args);
 void pthread_stop(void);
 
