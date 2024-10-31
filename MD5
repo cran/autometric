@@ -1,8 +1,8 @@
-e85e43bbf6e309eb790c3e8f1ce4ee2c *DESCRIPTION
+09aa8abb14eb00dc0b5b563935d8bafb *DESCRIPTION
 dd06a48d1e94a2597d3df114a2ef6a83 *LICENSE
 1b4beff8b151996359312ee64634ac00 *LICENSE.note
 cf655f570ae7c122740e279459232c11 *NAMESPACE
-7fe52d2ddbe0e44f8ab5e686efb07120 *NEWS.md
+028431c3dc103c3cfd3ccb209f3ab2f4 *NEWS.md
 b3945093aa4f50a75b53507c5af1b77d *R/autometric.R
 8a9ef02f22a5c6619fc2b9a0aa91e485 *R/log_active.R
 b0662b0d43bd3676e39ab6c32e519eb0 *R/log_phase_get.R
@@ -57,7 +57,7 @@ d8ad9649d8670f4e92eb2da7bf665ae8 *src/metrics_windows.c
 e6892f9196fab4f480404e91a6123b4a *src/thread.h
 e8aac7ca6aa9980ff6be5db222deac90 *src/timers.c
 aaa6a00ad5263fcd7a06d850ba77ef1e *src/timers.h
-885366e3aed66a69b6b565177dabf66f *src/version.h
+4964ff30b261438c7dd20ad43b118021 *src/version.h
 b5b301180dc3b278059c555569fa53f1 *tests/interactive/test-log_print.R
 3a5d9ab6b64e836d3dd6466713fa4b9e *tests/interactive/test-log_start.R
 0d9455c733d425cdca2279c24493368c *tests/interactive/test-memory.R
