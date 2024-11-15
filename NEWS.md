@@ -1,3 +1,9 @@
+# autometric 0.1.2
+
+* Plot the last PID by default.
+* Speed up `log_phase_set()`.
+* Do not overwrite null character in `strncpy()`.
+
 # autometric 0.1.1
 
 * Do not overwrite null character in `strncpy()`.

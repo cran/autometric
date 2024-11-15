@@ -14,7 +14,7 @@ Description: Intense parallel workloads can be difficult to monitor.
   visualize the log file to reveal potential resource-related
   reasons for the crash. The 'autometric' package borrows heavily from
   the methods of packages 'ps' <doi:10.32614/CRAN.package.ps> and 'psutil'.
-Version: 0.1.1
+Version: 0.1.2
 License: MIT + file LICENSE
 URL: https://wlandau.github.io/autometric/,
         https://github.com/wlandau/autometric
@@ -61,7 +61,7 @@ Encoding: UTF-8
 Language: en-US
 RoxygenNote: 7.3.2
 NeedsCompilation: yes
-Packaged: 2024-10-31 19:33:31 UTC; C240390
+Packaged: 2024-11-14 22:07:22 UTC; C240390
 Author: William Michael Landau [aut, cre]
     (<https://orcid.org/0000-0003-1878-3253>),
   Eli Lilly and Company [cph, fnd],
@@ -71,4 +71,4 @@ Author: William Michael Landau [aut, cre]
   Giampaolo Rodola [cph] (For the 'psutil' package. See LICENSE.note.)
 Maintainer: William Michael Landau <will.landau.oss@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-10-31 23:10:02 UTC
+Date/Publication: 2024-11-15 09:40:05 UTC
